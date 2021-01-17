@@ -1,16 +1,17 @@
 const h1 = document.createElement(`h1`);
 document.body.appendChild(h1);
 
-const timeSpent = () => {
+const clock = () => {
   let seconds = 0;
+  h1.textContent = `Jesteś na stronie 0 sekund.`;
 
-  function time() {
-    h1.textContent = `Jesteś na stronie ${seconds++} sekund.`;
-  }
+  const timer = () => {
+    h1.textContent = `Jesteś na stronie ${++seconds} sekund.`;
+  };
 
-  return time;
+  return timer;
 };
 
-const showTimeOnSite = timeSpent();
+const showTimeOnSite = clock();
 
 setInterval(showTimeOnSite, 1000);
